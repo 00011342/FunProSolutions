@@ -1,0 +1,35 @@
+namespace GuessNumber
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        int computernumber;
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var random = new Random();
+             computernumber = random.Next(1, 100);
+            MessageBox.Show(computernumber.ToString ());
+        }
+
+        private void btncheck_Click(object sender, EventArgs e)
+        {
+            var usernumber = nudUser.Value;
+            if (usernumber<computernumber)
+
+            {
+                MessageBox.Show("My number is more");
+            }
+            else if (usernumber>computernumber)
+            {
+                MessageBox.Show("My number is less");
+            }
+            else
+            {
+                MessageBox.Show("Oh yes You are winner");
+            }
+        }
+    }
